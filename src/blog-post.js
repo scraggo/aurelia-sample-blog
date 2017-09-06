@@ -23,7 +23,7 @@ export class BlogPost {
     // console.log(this.blogPost);
 
     //fetch post number
-    httpClient.fetch(`http://jsonplaceholder.typicode.com/posts/${this.blogPost.id}`)
+    httpClient.fetch(`https://jsonplaceholder.typicode.com/posts/${this.blogPost.id}`)
       .then(function(response) {
         if (response.status !== 200) {
           alert('Post not found.');
@@ -53,7 +53,7 @@ export class BlogPost {
     //random post id
     this.myPostData.id = Math.ceil(Math.random() * 10) + 100;
     // console.log(this.myPostData);
-    httpClient.fetch('http://jsonplaceholder.typicode.com/posts', {
+    httpClient.fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       body: json(this.myPostData)
     })
@@ -70,7 +70,7 @@ export class BlogPost {
   // }
 
   updateData() {
-    httpClient.fetch(`http://jsonplaceholder.typicode.com/posts/${this.blogPost.id}`, {
+    httpClient.fetch(`https://jsonplaceholder.typicode.com/posts/${this.blogPost.id}`, {
       method: 'PUT',
       body: json(this.blogPost)
     })
@@ -82,7 +82,7 @@ export class BlogPost {
   }
 
   deleteData() {
-    httpClient.fetch('http://jsonplaceholder.typicode.com/posts/1', {
+    httpClient.fetch('https://jsonplaceholder.typicode.com/posts/1', {
       method: 'DELETE'
     })
       .then(response => response.json())
