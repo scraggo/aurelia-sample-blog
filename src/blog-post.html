@@ -1,0 +1,31 @@
+<template>
+  <div class="container">
+
+
+    <h2>POST A BLOG POST</h2>
+    <div class="form-group">
+      <form role="form" submit.delegate="postData()">
+        <label for="userID">User ID</label>
+        <input type="text" value.bind="myPostData.userId" class="form-control" id="userID" placeholder="1">
+        <label for="postTitle">Post Title</label>
+        <input type="text" value.bind="myPostData.title" class="form-control" id="postTitle" placeholder="Post Title">
+        <label for="postBody">Post Body</label>
+        <input type="text" value.bind="myPostData.body" class="form-control" id="postBody" placeholder="Post Body">
+        <button type="submit">Submit New Post</button>
+      </form>
+    </div>
+    <div if.bind="newPost">
+      <p>Post #${myPostData.id} submitted by user ${myPostData.userId}.</p>
+      <!-- <h3>User ID</h3>
+      <p>${myPostData.userId}</p>
+      <h3>Title</h3>
+      <p>${myPostData.title}</p>
+      <h3>Body</h3>
+      <p>${myPostData.body}</p> -->
+    </div>
+    <hr>
+
+    <!-- <button click.delegate="updateData()">PUT</button>
+    <button click.delegate="deleteData()">DEL</button> -->
+  </div>
+</template>

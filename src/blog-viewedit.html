@@ -1,0 +1,34 @@
+<template>
+  <div class="container">
+    <h2>VIEW / EDIT BLOG POST</h2>
+    <div class="form-group">
+      <form role="form" submit.delegate="getData()">
+        <label for="un">User ID </label>
+        <input type="text" value.bind="blogPost.userId" class="form-control" id="un" placeholder="1-10">
+          <label for="pn">Post Number </label>
+          <input type="text" value.bind="blogPost.id" class="form-control" id="pn" placeholder="1-100">
+        <button type="submit">View Post</button>
+      </form>
+    </div>
+    <div if.bind="blogPost.title">
+      <h3>Title</h3>
+      <div>
+        <span class="pre-edit-border" contenteditable textcontent.bind="blogPost.title"></span>
+        <!-- <p>Click ^ to edit</p> -->
+      </div>
+      <!-- <label for="bpTitle">${blogPost.title & oneTime}</label> - <a id="editbpTitle" href="#">Edit</a><br>
+      <input type="text" value.bind="blogPost.title" class="form-control" id="bpTitle" placeholder="blogPost.title" size="80"> -->
+      <h3>Body</h3>
+      <!-- <label for="bpBody">${blogPost.body & oneTime}</label> - <a id="editbpBody" href="#">Edit</a><br> -->
+      <!-- <input type="text" value.bind="blogPost.body" class="form-control" id="bpBody" placeholder="blogPost.body"> -->
+      <div>
+        <span class="pre-edit-border" contenteditable textcontent.bind="blogPost.body"></span>
+        <!-- <p>Click ^ to edit</p> -->
+      </div>
+      <!-- <p>${blogPost.body}</p> -->
+      <br>
+      <button class="btn btn-default" click.delegate="updateData()">Update Blog Post</button>
+      <p if.bind="editPostSuccess">Post #${blogPost.id} by user #${blogPost.userId} successfully updated.</p>
+    </div>
+  </div>
+</template>
