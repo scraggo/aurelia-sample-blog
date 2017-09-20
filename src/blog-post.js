@@ -16,10 +16,16 @@ export class BlogPost {
     /**
      * Retrieves a blog post from fake json server
     */
-
+    console.log(this.blogPost.userId);
     //default form values if nothing entered
-    this.blogPost.id = pn.value || 1;
-    this.blogPost.userId = un.value || 1;
+    if (!this.blogPost.id) {
+      this.blogPost.id = 1;
+    }
+    if (!this.blogPost.userId) {
+      this.blogPost.userId = 1;
+    }
+    // this.blogPost.id = pn.value || 1;
+    // this.blogPost.userId = un.value || 1;
     // console.log(this.blogPost);
 
     //fetch post number
