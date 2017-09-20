@@ -230,6 +230,7 @@ System.config({
       "aurelia-fetch-client"
     ],
     "blog-viewedit.js": [
+      "fetch",
       "aurelia-framework",
       "./blog-post"
     ],
