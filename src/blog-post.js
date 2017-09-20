@@ -12,6 +12,10 @@ export class BlogPost {
     // id: 101
   }
 
+  determineActivationStrategy() {
+    return "replace";
+  }
+
   getData() {
     /**
      * Retrieves a blog post from fake json server
